@@ -27,16 +27,19 @@ export const categories = [
     id: 1,
     img: "https://s3.amazonaws.com/rodney.store/Store+Pics/pexels-simon-reza-9920820-removebg-preview-min.png",
     title: "SHIRT STYLE!",
+    cat:"shirts"
   },
   {
     id: 2,
     img: "https://s3.amazonaws.com/rodney.store/Store+Pics/pexels-godisable-jacob-2071660-removebg-preview-min.png",
     title: "LOUNGE WEAR",
+    cat:"women"
   },
   {
     id: 3,
     img: "https://s3.amazonaws.com/rodney.store/Store+Pics/pexels-paul-le-2283279-removebg-preview-min.png",
     title: "SUIT JACKET!",
+    cat:"jackets"
   },
 ];
 
@@ -63,14 +66,14 @@ export const popularProducts = [
   },
   {
     id: 6,
-    img: "https://s3.amazonaws.com/rodney.store/Store+Pics/627-min.png",
+    img: "https://s3.amazonaws.com/rodney.store/Store+Pics/Screenshot_2022-05-22_222931-removebg-preview-min.png",
   },
   {
-    id: 5,
-    img: "https://s3.amazonaws.com/rodney.store/Store+Pics/512b4b870390fac58da5206e88d228d6-min.png",
+    id: 7,
+    img: "https://s3.amazonaws.com/rodney.store/Store+Pics/Screenshot_2022-05-22_222712-removebg-preview-min.png",
   },
   {
-    id: 6,
-    img: "https://s3.amazonaws.com/rodney.store/Store+Pics/627-min.png",
+    id: 8,
+    img: "https://s3.amazonaws.com/rodney.store/Store+Pics/Screenshot_2022-05-22_221301-removebg-preview-min.png",
   },
 ];

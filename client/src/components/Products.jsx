@@ -10,7 +10,8 @@ flex-wrap: wrap;
 justify-content: space-between;
 `;
 
-const Products = () => {
+const Products = ({ cat, filters, sort }) => {
+  console.log(cat,filters,sort)
   return (
     <Container>
       {popularProducts.map((item) => (

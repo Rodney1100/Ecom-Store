@@ -34,6 +34,7 @@ const Center = styled.div`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+
   @media only screen and (max-width: 380px) {
     background-color: #eee;
   }
@@ -69,6 +70,17 @@ const List = styled.ul`
   padding: 0;
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  @media only screen and (max-width: 380px) {
+   font-size: 12px;
+  }
+`;
+const List2 = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   @media only screen and (max-width: 380px) {
    font-size: 12px;
@@ -128,18 +140,17 @@ function Footer() {
       </Center>
       <Right>
         <Title>Contact</Title>
-        <List>
+        <List2>
           <ContactItem>
-            <Room style={{ marginRight: "10px" }} /> 123 Simple Street Port St
-            Lucie Fl 34987
+            <Room style={{ marginRight: "10px" }} /> 123 Simple Street Port St. Lucie Fl 34987
           </ContactItem>
           <ContactItem>
             <Phone style={{ marginRight: "10px" }} /> 561-555-5555
           </ContactItem>
           <ContactItem>
-            <Email style={{ marginRight: "10px" }} /> Rodney.Plancher@yahoo.com
+            <Email style={{ marginRight: "10px" }} /> Rodney.Plancher@Yahoo.com
           </ContactItem>
-        </List>
+        </List2>
         <Payment src="" />
       </Right>
     </Container>

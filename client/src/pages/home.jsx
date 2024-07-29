@@ -15,7 +15,7 @@ const Home = () => {
       <Categories />
       <Products />
       <NewLetter />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -1,4 +1,7 @@
 import React from "react";
+// import { Link } from "react-router-dom/cjs/react-router-dom.min";
+// import { Link } from "react-router-dom/cjs/react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 // import
 
@@ -41,6 +44,7 @@ const Title = styled.h1`
 const Button = styled.button`
   border: none;
   padding: 10px;
+  border: 2px solid #929292;
   background-color: #fff;
   color: gray;
   cursor: pointer;
@@ -50,11 +54,13 @@ const Button = styled.button`
 const CategoryItem = ({ item }) => {
   return (
     <Container>
+      <Link to={`/products/${item.cat}`}>
       <Image src={item.img} />
       <Info>
-        <Title>{item.title} </Title>
+        <Title>{item.title}</Title>
         <Button>SHOP NOW</Button>
       </Info>
+      </Link>
     </Container>
   );
 };

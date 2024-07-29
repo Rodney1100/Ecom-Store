@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Announcement from "../components/Announcement";
 import NavBar from "../components/NavBar";
@@ -6,6 +6,7 @@ import NewLetter from "../components/NewLetter";
 import Footer from "../components/Footer";
 import Products from "../components/Products";
 import styled from "styled-components";
+import { useLocation } from "react-router-dom/cjs/react-router-dom";
 
 const Container = styled.div``;
 const Title = styled.h1`
@@ -36,11 +37,25 @@ const Select = styled.select`
   padding: 10px;
   margin-right: 20px;
   @media only screen and (max-width: 380px) {
-margin: 10px 0px;
+    margin: 10px 0px;
   }
 `;
 
 const ProductList = () => {
+  const location = useLocation();
+  const cat = location.pathname.split("/")[2];
+  const [filters, setFilters] = useState({});
+  const [sort, setSort] = useState("newest");
+
+  const handleFilters = (e) => {
+    const value = e.target.value;
+    setFilters({
+      ...filters,
+      [e.target.name]: value,
+    });
+  };
+
+  // console.log(filters);
   return (
     <Container>
       <NavBar />
@@ -50,10 +65,8 @@ const ProductList = () => {
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products: </FilterText>
-          <Select>
-            <Option disabled selected>
-              Color
-            </Option>
+          <Select name="color" onChange={handleFilters}>
+            <Option disabled>Color</Option>
             <Option>White</Option>
             <Option>Black</Option>
             <Option>Red</Option>
@@ -61,10 +74,8 @@ const ProductList = () => {
             <Option>Green</Option>
             <Option>Yellow</Option>
           </Select>
-          <Select>
-            <Option disabled selected>
-              Size
-            </Option>
+          <Select name="size" onChange={handleFilters}>
+            <Option disabled>Size</Option>
             <Option>XS</Option>
             <Option>S</Option>
             <Option>M</Option>
@@ -74,17 +85,15 @@ const ProductList = () => {
         </Filter>
         <Filter>
           <FilterText>Sort Products: </FilterText>
-          <Select>
-            <Option disabled selected>
-              Newest
-            </Option>
-            <Option>Price (asc)</Option>
-            <Option>Price (desc)</Option>
+          <Select onChange={(e) => setSort(e.target.value)}>
+            <Option value="newest">Newest </Option>
+            <Option value="asc">Price (asc)</Option>
+            <Option value="desc">Price (desc)</Option>
           </Select>
         </Filter>
       </FilterContainer>
 
-      <Products />
+      <Products cat={cat} filters={filters} sort={sort} />
       <NewLetter />
       <Footer />
     </Container>
